@@ -1,7 +1,5 @@
 package com.wmptest.main.controller;
 
-import java.util.Arrays;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -25,6 +23,12 @@ public class MainController {
 	
 	private Logger logger = Logger.getLogger(this.getClass());
 
+	/**
+	 * 메인화면
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@RequestMapping("/index")
 	  public ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
 		
@@ -35,6 +39,11 @@ public class MainController {
 		return mv;
 	  }
 	
+	/**
+	 * 출력버튼에 대한 ajax 요청 처리
+	 * @param vo
+	 * @return
+	 */
 	@RequestMapping(value="/printOut", method=RequestMethod.POST, produces = "application/json; charset=utf8")
 	public @ResponseBody MainVo printOut(@ModelAttribute MainVo vo) {
 		
